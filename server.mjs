@@ -1,0 +1,1 @@
+import express from'express';import{policies}from'./domain.mjs';const d=policies(),a=express();a.get('/health',(_,r)=>r.json({status:'ok',policies:d.items.length}));a.listen(Number(process.env.MESH_PORT)||22400,'0.0.0.0');
